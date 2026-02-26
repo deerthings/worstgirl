@@ -10,65 +10,332 @@
 
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
 
+
+<script type="text/javascript">
+// <![CDATA[
+var colour="#FFFFFF";
+var sparkles=120;
+
+/****************************
+*  Tinkerbell Magic Sparkle *
+* (c) 2005 mf2fm web-design *
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+
+window.onload=function() { if (document.getElementById) {
+  var i, rats, rlef, rdow;
+  for (var i=0; i<sparkles; i++) {
+    var rats=createDiv(3, 3);
+    rats.style.visibility="hidden";
+    document.body.appendChild(tiny[i]=rats);
+    starv[i]=0;
+    tinyv[i]=0;
+    var rats=createDiv(5, 5);
+    rats.style.backgroundColor="transparent";
+    rats.style.visibility="hidden";
+    var rlef=createDiv(1, 5);
+    var rdow=createDiv(5, 1);
+    rats.appendChild(rlef);
+    rats.appendChild(rdow);
+    rlef.style.top="2px";
+    rlef.style.left="0px";
+    rdow.style.top="0px";
+    rdow.style.left="2px";
+    document.body.appendChild(star[i]=rats);
+  }
+  set_width();
+  sparkle();
+}}
+
+function sparkle() {
+  var c;
+  if (x!=ox || y!=oy) {
+    ox=x;
+    oy=y;
+    for (c=0; c<sparkles; c++) if (!starv[c]) {
+      star[c].style.left=(starx[c]=x)+"px";
+      star[c].style.top=(stary[c]=y)+"px";
+      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+      star[c].style.visibility="visible";
+      starv[c]=50;
+      break;
+    }
+  }
+  for (c=0; c<sparkles; c++) {
+    if (starv[c]) update_star(c);
+    if (tinyv[c]) update_tiny(c);
+  }
+  setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+  if (starv[i]) {
+    stary[i]+=1+Math.random()*3;
+    if (stary[i]<shigh+sdown) {
+      star[i].style.top=stary[i]+"px";
+      starx[i]+=(i%5-2)/5;
+      star[i].style.left=starx[i]+"px";
+    }
+    else {
+      star[i].style.visibility="hidden";
+      starv[i]=0;
+      return;
+    }
+  }
+  else {
+    tinyv[i]=50;
+    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+    tiny[i].style.width="2px";
+    tiny[i].style.height="2px";
+    star[i].style.visibility="hidden";
+    tiny[i].style.visibility="visible"
+  }
+}
+
+function update_tiny(i) {
+  if (--tinyv[i]==25) {
+    tiny[i].style.width="1px";
+    tiny[i].style.height="1px";
+  }
+  if (tinyv[i]) {
+    tinyy[i]+=1+Math.random()*3;
+    if (tinyy[i]<shigh+sdown) {
+      tiny[i].style.top=tinyy[i]+"px";
+      tinyx[i]+=(i%5-2)/5;
+      tiny[i].style.left=tinyx[i]+"px";
+    }
+    else {
+      tiny[i].style.visibility="hidden";
+      tinyv[i]=0;
+      return;
+    }
+  }
+  else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  set_scroll();
+  y=(e)?e.pageY:event.y+sdown;
+  x=(e)?e.pageX:event.x+sleft;
+}
+
+function set_scroll() {
+  if (typeof(self.pageYOffset)=="number") {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body.scrollTop || document.body.scrollLeft) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+	sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  if (typeof(self.innerWidth)=="number") {
+    swide=self.innerWidth;
+    shigh=self.innerHeight;
+  }
+  else if (document.documentElement && document.documentElement.clientWidth) {
+    swide=document.documentElement.clientWidth;
+    shigh=document.documentElement.clientHeight;
+  }
+  else if (document.body.clientWidth) {
+    swide=document.body.clientWidth;
+    shigh=document.body.clientHeight;
+  }
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height+"px";
+  div.style.width=width+"px";
+  div.style.overflow="hidden";
+  div.style.backgroundColor=colour;
+  return (div);
+}
+// ]]>
+</script>
+
+
     </head>
 
-<div class="center-div" style="background-color: #000000;">
-        <div class="title">WORSTGiRLEVE.</div>
-<body class="page">
-    my name is Harley. 19 years rotting. we exist here. need a place to whinge and Okay honestly i know this looks like shit but if i spend anymore time trying to make it good it wont ever exist. THERE-FORE, we're going simple. enjoy the void / smell you later / etc
-    <br>
-    <br>
-    <center>
-    <a href="/fronters.html">fronters</a> + <a href="/habit.html">HABIT</a> 
-    </center>
-    </body>
-</div>
-</div>
-</div>
+<body>
+	<div class="sidebar">
+		<center><div class="title">WORSTGIRL</div></center>
+		<div class="profile">
+			
+			<p class="profile-desc">
+				<img src="img/pfp.png">
+				HARLEY. any & it. 20yrs rotting
+			</p>
+		</div>
+
+		<br>
+		<center><div class="menu">
+			<a href="habit.html">inhabitant</a>
+		</div></center>
+		<br>
+	</div>
+	<div class="main">
+		<iframe src="home.html" name="content"></iframe>
+	</div>
+</body>
 
 <style>
-.title {
-  font-size: 27px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  font-family: "janyk", monospace;
+
+body {
+	 background-color: #080808;
+	 color: #ffffff;
+		font-family: "Roboto Mono", monospace;
+		font-optical-sizing: auto;
+		font-weight: normal;
+		font-style: normal;
+		font-size: auto;
+		margin: 0;
+		padding: 0;
+}
+
+.sidebar {
+    width: 200px;
+    min-height: 100%;
+    padding: 2rem 2rem;
+    position: absolute;
+    overflow: auto;
+}
+
+.subtitle {
+	margin-bottom: 24px;
+	font-style: italic;
+}
+
+.profile img {
+	display: inline;
+	float: left;
+	margin-bottom: 12px;
+	margin-right: 6px;
+}
+
+.profile .profile-desc {
+	display: inline;
+}
+
+.profile {
+	border: 1px solid #ffffff;
+	padding: 12px;
+	border-top: 8px solid #ffffff;
+	min-height: 60px;
+  background-color: #000000;
+}
+
+
+.menu a {
+	border: 1px solid #ffffff;
+	text-decoration: none;
+	padding: 4px;
+	display: inline-block;
+	margin-bottom: 6px;
+}
+
+.menu a:hover {
+	font-weight: bold;
+}
+
+.sidebar a:hover {
+	text-decoration: underline;
+}
+
+iframe {
+	height: 100%;
+	width: 100%;
+	border: none;
+}
+
+.main {
+    position: absolute;
+    height: 100vh;
+    width: calc(100% - 316px);
+    margin-left: 316px;
+    box-sizing: border-box;
 }
 
 .page {
-  width: 100px;
-  padding: 15px;
-  margin: 0 auto;
+	padding: 24px;
+	padding-right: 60vw;
 }
 
-body {
-color: #ffffff;
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 14px;
-  background-color: black;
-  margin: 0;
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh;
-  background-image:Url('/bg/stars.gif');
-  overflow: hidden;
-  }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #080808; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #080808; 
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 4px;
+  font-family: "janyk";
+}
 
 a:link {
-  color: #6e4ad2;
+  color: #ffffff;
 }
 
 a:hover {
-  color: rgb(255, 255, 255);
+  color: rgb(208, 208, 208);
 }
 
-.center-div {
-  justify-content: center;
-  padding: 20px;
+h1 {
+	font-family: "janyk", monospace;
+	font-variant: small-caps;
+	border-bottom: 1px dashed;
 }
 
+h2 {
+			font-family: "janyk", monospace;
+}
+
+
+ img:hover {
+    filter: drop-shadow(0px 0px 6px #515151);
+    transform: scale(1.2);
+    transition: all 0.3s;
+
+}
 
 </style>
