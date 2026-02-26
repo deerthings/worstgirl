@@ -213,10 +213,17 @@ function createDiv(height, width) {
 			<a href="https://sacrileash.itch.io/">games</a>
 			<a href="https://soundcloud.com/djfunnydog">music</a>
 		</div>
+        <div class="myeyes"><img src="img/myeyesareuphere.png" style="image-rendering:auto;width:auto;height:120px">
   </center>
 		<br>
 	</div>
-    <div class="myeyes"><img src="img/myeyesareuphere.png" style="image-rendering:auto;width:auto;height:100px">
+          	<div class="sidebar2">
+		<div class="status">
+          		<center><div class="title">// STATUS</div></center>
+			<p class="status-desc">
+				2.26.2026 wired thoughts for wired people. i always thought the lain psx game looked cool, in the way that most things that arent readily accessible or understandable are cool to me.
+			</p>
+
     </div>
     </div>
 </body>
@@ -241,13 +248,25 @@ body {
     overflow: auto;
 }
 
+.sidebar2 {
+    width: 250px;
+    height: 100px;
+  overflow-y: scroll;
+    position: absolute;
+	  border: 1px solid #ffffff;
+    border-left: 8px solid #ffffff;
+    margin: 180px;
+}
+
 .container {
   display: flex; 
   padding: 0px 0px;
 }
 
 .myeyes {
-  margin-top: 20px;
+  margin-top: -170px;
+  margin-left: 200px;
+  position: absolute;
 }
 
 .pk {
@@ -265,10 +284,21 @@ body {
 	display: inline;
 }
 
+.status .status-desc {
+	display: inline;
+}
+
+
 .profile {
 	border: 1px solid #ffffff;
 	padding: 12px;
 	border-top: 8px solid #ffffff;
+	min-height: 60px;
+  background-color: #000000;
+}
+
+.status {
+	padding: 12px;
 	min-height: 60px;
   background-color: #000000;
 }
@@ -312,11 +342,12 @@ body {
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #080808; 
+  background: #000000; 
+  border: 1px solid #ffffff
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #080808; 
+  background: #ffffff; 
 }
 
 .title {
