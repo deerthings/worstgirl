@@ -213,7 +213,7 @@ function createDiv(height, width) {
 			<a href="https://sacrileash.itch.io/">games</a>
 			<a href="https://soundcloud.com/djfunnydog">music</a>
 		</div>
-        <div class="myeyes"><img src="img/myeyesareuphere.png" style="image-rendering:auto;width:auto;height:120px">
+        <img src="img/myeyesareuphere.png" style="image-rendering:auto;width:auto;height:150px;top:190px;right:100px;position:absolute">
   </center>
 		<br>
 	</div>
@@ -264,8 +264,8 @@ body {
 }
 
 .myeyes {
-  margin-top: -170px;
-  margin-left: 200px;
+  margin-top: -200px;
+  margin-left: 190px;
   position: absolute;
 }
 
@@ -358,10 +358,14 @@ body {
 
 a:link {
   color: #ffffff;
+     transition: all 0.2s;
+   transform: scale(1);
 }
 
 a:hover {
   color: rgb(208, 208, 208);
+  padding: 6px;
+  transition: all 0.2s;
 }
 
 a:visited {
