@@ -13,59 +13,92 @@
 
     <style>
 @font-face {
-  font-family: 'janyk';
+  font-family: 'janyk'; 
   src: url(font/janyk.ttf);
 }
+
+@font-face {
+  font-family: 'DepartureMono';
+  src: url(font/DepartureMono.otf);
+}
+
 </style>
 
-<div class="center-div" style="background-color: #000000"">
-<div class="header">
+<style>
+
+  header {
+    display: flex;
+    align-items: center;
+
+    h1, p {
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+
+    {
+        }
+    }
+
+    .nav {
+      margin-left: 1em;
+    }
+
+    :hover::before {
+    opacity: 1;
+  }
+
+      .nav a {
+        color: var(--white);
+        text-decoration: none;
+        transition: all 0.1s ease-in-out;
+    }
+    
+</style>
+</head><body><main>
+  <header>
+    <h1><span class="texthover">HARLEY</span> <mark>//</mark> <span class="texthover">"THE HλBIT."<span class="refersto2"> [he/it]</span></h1>
+    </div>
+  </header>
+  <div class="content">
+    <section>
+      <p>
+        <span class="texthover"><center><img src="img/habit.png" title="by Kinerxy @ tumblr" style="image-rendering:auto;width:auto;height:150px;float:left">this unit</span> is a <mark>[dog, entity, parasite, etc]</mark> bound to <span class="texthover">human flesh<span class="refersto"> [ΘΔ]</span></span> running on corrupted hardware and PURE FUCKING SPITE.
+      </p>
+      <p>
+        it cares a lot about its perception and seemingly struggles to operate outside of the context of other people at times.
+      </p>
+      <p>
+        alas, <mark>[perception is hell, identity is a fuck,]</mark> and he isnt being paid enough to maintain stability in his identity. unfortunately more "concept" than "individual" but it's the end result of insane forms of self-expression that counts.</center>
+      </p>
+    </section>
+    <section>
+<center><mark>▌▘▖▌▖▌▖▌▌▌</mark></center>
+      <p>
+<section><center>this traumadog somehow toes the line between <mark>[overly casual, weirdly stilted]</mark>. he likes attention, in theory, and manages to be incredibly self-conscious while appearing grandiose to the untrained eye. prone to crashes and crashouts.</center>
+      </p>
+    </section>
+        </section>
+  <section>
 <center>
-    <div class="title">THE HABIT.</div>
-he/it/maul/pup :: young innocent vesselrotter
-<br>
-    </div>
-<br>
-    <div id="imgcontainer">
-        <img src="img/habit.png" title="by Kinerxy @ tumblr" style="image-rendering:auto;width:auto;height:200px;float:left">
-
-    </div>
-
-<body class="page"><mark>THE HABIT</mark> is a <mark>[dog, entity, parasite, etc]</mark> bound to human flesh [ΘΔ] running on corrupted hardware and PURE FUCKING SPITE.
-<br>
-<br>
- seemingly struggles to operate outside of the context of other people at times.
-<br>
-<br>
-<mark>[perception is hell, identity is a fuck.]</mark> he isnt being paid enough to maintain stability in his identity. unfortunately more "concept" than "individual" but it's the end result of insane forms of self-expression that counts.
-<br>
-    </body>
-
-          	<div class="info"><center>
-              <br>▌▘▖▌▖▌▖▌▌▌
-              <br>
-              <br><mark>this traumadog</mark> somehow toes the line between overly casual and weirdly stilted. he likes attention, in theory, and manages to be incredibly self-conscious while appearing grandiose to the untrained eye. prone to crashes and crashouts.
-            <br>
-            </center>
-            </div>    
-
-              	<div class="identity"><center>
               <br>if you wanna make <mark>this one</mark> real happy then refer to this block of EXTENDED REFERENTIAL LANGUAGE.
               <br>
               <br>
-              identifier = "[THE] HABIT";
-              <br>unit id = "U-097"
-              <br>serial # = "7[0]7097"
-              <br>hexadecimal = "0x12D29"
-              <br>dollcode = "▌▘▖▌▖▌▖▌▌▌"
-              <br>uuid = "a71b03ed-b3ce-4bee-b9ea-a6c4b8b9345a" 
+              identifier <mark>=</mark> "[THE] HABIT";
+              <br>unit id <mark>=</mark> "U-097"
+              <br>serial # <mark>=</mark> "7[0]7097"
+              <br>hexadecimal <mark>=</mark> "0x12D29"
+              <br>dollcode <mark>=</mark> "▌▘▖▌▖▌▖▌▌▌"
+              <br>uuid <mark>=</mark> "a71b03ed-b3ce-4bee-b9ea-a6c4b8b9345a" 
             <br>
             <br>
             <mark>this unit</mark> prefers nonhuman terminology when applicable. so like. have at it.
             </center>
-            </div>    
-</div>
-</div>
+      </p>
+    </section>
+    
+  </div>
+</main>
+</body></html>
 
 <style>
     .title {
@@ -75,14 +108,36 @@ he/it/maul/pup :: young innocent vesselrotter
   font-family: "janyk", monospace;
 }
 
-.page {
-  width: 450px;
-  padding: 15px;
+  .texthover:hover {
+    color: #5f5867;
+  }
+
+.refersto {
+    line-height: 0;
+    font-size: 0;
+    color: #5f5867;
+    transition: font-size .1s;
+}
+
+.refersto2 {
+    line-height: 0;
+    font-size: 0;
+    color: #5f5867;
+    transition: font-size .1s;
+}
+
+.texthover:hover .refersto {
+  font-size: 15px;
+}
+
+.texthover:hover .refersto2 {
+  font-size: 25px;
 }
 
 body {
-  color: #dcd5df;
-  font-family: "Roboto Mono", monospace;
+  width: 600px;
+  color: #e2d8e2;
+  font-family: 'DepartureMono', monospace;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
@@ -95,46 +150,23 @@ body {
   overflow: hidden;
 }
 
-.info {
-    width: 400px;
-    height: auto;
-    position: absolute;
-	border: 1px dashed #ffffff;
-    border-top: 5px solid #ffffff;
-    margin-left: 15px;
-    margin-top: 20px;
-    background-color: #000000;
-    padding: 5px;
+section {
+        margin: 8px;
+    border-left: 2px solid #220e28;
+    margin-bottom: 1em;
+    padding: 0.2em 1em;
+      background-color: #000000;
 }
 
-.identity {
-    width: 250px;
-    height: auto;
-    position: absolute;
-	border: 1px dashed #ffffff;
-
-    margin-left: 440px;
-    margin-top: -300px;
-    background-color: #000000;
-    padding: 5px;
-}
+  .content {
+    margin: 0.5em;
+    padding: 0 5px;
+    border-left: 1px solid #e2d8e2;
+  }
 
 mark {
-  background-color: #29212c;
-  color: #ffffff;
-}
-
-.center-div {
-  border-top: 5px solid #ffffff;
-  justify-content: center;
-  border: 1px dashed #dcd5df;
-  padding: 5px;
-  filter: drop-shadow(0px 0px 10px #000000);
-}
-
-.header {
-    border-bottom: 1px dashed #dcd5df;
-    padding: 5px;
+  background-color: #130a15;
+  color: #72357a;
 }
 
 img {
@@ -152,6 +184,15 @@ img {
 title:hover {
     transform: scale(1.2);
     transition: all 0.3s;
+}
+
+h1 {
+	font-family: "janyk", monospace;
+	font-variant: small-caps;
+}
+
+h2 {
+			font-family: "janyk", monospace;
 }
 
 </style>
